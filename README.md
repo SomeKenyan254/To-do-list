@@ -1,2 +1,2 @@
-# Restaurant_Page
-Create a restaurant page by dynamically rendering a restaurant homepage! Use javascript only to generate the entire contents of the website
+# To -do list 
+Create a to do app with skills learnt so far that includes webpack, Organising js code , understanding json and OOP principles.
