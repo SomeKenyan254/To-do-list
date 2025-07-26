@@ -1,20 +1,16 @@
-const Manager = (function (){
+const Manager = ( () =>{
     let idCounter = 0;
     const todos =[];
     const projects = [];
-
-    
-
-        function createToDo(title, description = "", dueDate = null, notes = '', checklist = [],priority = "medium"){
+    const createToDo = (title, description = "", notes = "", dueDate = null, priority = "high") => {
         const todo =
         {
             id: ++idCounter,
-            title: title,
-            description: description,
-            notes: notes,
-            dueDate: dueDate,
-            checklist: checklist,
-            priority:priority,
+             title,
+             description,
+             notes,
+           dueDate,
+           priority,
             completed: false,
             createdAt: new Date()
           };
@@ -23,28 +19,47 @@ const Manager = (function (){
           return todo
         }
        
-        function createProject(title, description = "",priority = "high"){
+        const createProject = (title, description = "") => {
         const project = {
             id: ++idCounter,
-            title:title,
-            description: description,
-            priority: priority
+            title,
+             description,
         }
         projects.push(project)
          return project
 
         }
-        function getToDos() {
-            return [...todos];
-        }  
-        function getProjects() {
-            return [...projects];
+        const deleteToDo = (id) => {
+            const index = todos.findIndex(todo => todo.id === id);
+            if (index !== -1) {
+                todos.splice(index, 1);
+            }
         }
-        return{createToDo,createProject,getToDos,getProjects}
+        const deleteProject = (id) => {
+            const index = projects.findIndex(project => project.id === id);
+            if (index !== -1) {
+                projects.splice(index, 1);
+            }
+        }
+        
+   
+        
+        return{createToDo,createProject,deleteToDo,deleteProject,todos}
     
 })();
+const todo = Manager.createToDo('Buy groceries','Research summer destinations', '2025-07-15' );
+const todo1 = Manager.createToDo('Start to-do project','Understand Dom & Css & Js', '2025-07-15');
+const project1 = Manager.createProject("Finish web-dev","It sucks");
+
+
+// Log the created ToDo and Project to verify functionality
+console.log('Created ToDo:', todo);
+console.log('Created ToDo 1:', todo1);
+console.log('Created Project:', project1);
+
+
+
+
 
 export { Manager };
-
-
 
