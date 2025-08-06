@@ -47,18 +47,6 @@ const Manager = ( () =>{
         return{createToDo,createProject,deleteToDo,deleteProject,todos}
     
 })();
-const todo = Manager.createToDo('Buy groceries','Research summer destinations', '2025-07-15' );
-const todo1 = Manager.createToDo('Start to-do project','Understand Dom & Css & Js', '2025-07-15');
-const project1 = Manager.createProject("Finish web-dev","It sucks");
-
-
-// Log the created ToDo and Project to verify functionality
-console.log('Created ToDo:', todo);
-console.log('Created ToDo 1:', todo1);
-console.log('Created Project:', project1);
-
-
-
 
 
 export { Manager };
