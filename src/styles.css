@@ -5,16 +5,55 @@ body{
 .main{
     height: 100vh;
     display: grid;
+    background-color: aqua;
     grid-template-columns: 1fr 2fr;
+    gap: 20px;
+
   
+}
+
+.card {
+    background: white;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 16px;
+    margin: 8px 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.2s ease;
+}
+
+.card:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+.header{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px;
+
+}
+.todo{
+    background-color: beige;
+
+}
+.projects{
+    background-color: blanchedalmond;
+
 }
 #content{
    background-color: #000;
     color: #6cb809;
     opacity: 0.5;
     text-align: center;
+    
    
    
+}
+.head{
+     margin-top: 4px;
+    background-color: rgb(198, 198, 236);
+    height: 1.5em
+
 }
 
 .buttons{

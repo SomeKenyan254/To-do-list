@@ -9,23 +9,23 @@
    
     
     <div class="main">
-        
         <div class="header">
-            <h1>To-Do-List</h1>
-
-        </div>
-        <div id="content">
-            <div class="todo">
+            <h1>To-Do-App</h1>
+          <div class="todo">
+            <div class="para">
+                Add tasks
+            </div>
                 <form id="task-form">
-                <fieldset>
-                    <div class="wrapper">
+                    <fieldset>
+                     <div class="wrapper">
+                        
                          <div class="shape">
                              <label for="title">Title</label>
-                            <input type="text" id="title" name="title">
+                            <input type="text" id="title" name="title" required>
                          </div>
                         <div class="shape">
                             <label for="description">Description</label>
-                            <input type="text" id="description" name="description">
+                            <input type="text" id="description" name="description" required>
                         </div>
                         <div class="shape">
                             <label for="notes">Notes</label>
@@ -33,7 +33,7 @@
                         </div>
                         <div class="shape">
                             <label for="dueDate">Due-Date</label>
-                            <input type="date" id="dueDate" name="Due-Date">
+                            <input type="date" id="dueDate" name="dueDate">
                         </div>
                         <div class="shape">
                              <label for="priority">Priority</label>
@@ -45,7 +45,14 @@
                         </div>
                     </div>
 
+              
+                <section>
+                    <div class="submit-tasks">
+                      <button type="submit">Add task</button>
+                    </div>
+                  </section>
                 </fieldset>
+                  
 
 
 
@@ -53,15 +60,39 @@
 
             </div>
             <div class="projects">
+                <div class="para">Add project name</div>
+                <fieldset>
+                <form id="project-form">
+                
                 <div class="project-wrapper">
                     <div class="project-shape">
+                        <label for="project-title">Project Title</label>
+                            <input type="text" id="project-title" name="project-title" required>
+                        
+                    </div>
+                    <div class="project-shape">
+                        <label for="project-description">Project Description</label>
+                            <input type="text" id="project-description" name="project-description" required>
                         
                     </div>
                 </div>
+                <section>
+                    <div class="submit-project">
+                      <button type="submit">Add Project</button>
+                    </div>
+                  </section>
+                </fieldset>
+            </form>
             </div>
+
+         </div>
+         <div class="content">
+            <div class="head">To-do-list</div>
+            <div class="projectList"></div>
+         </div>
             
             
-        </div>
+        
        
     </div>
 
