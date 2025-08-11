@@ -30,6 +30,7 @@ const Manager = ( () =>{
              description,
         }
         projects.push(project)
+        saveProject()
          return project       
             }
         const saveTodo = () => {
@@ -39,6 +40,12 @@ const Manager = ( () =>{
         const getTodos = () => {
             return todos;
         }
+        const getProjects = () =>{
+            return projects
+
+        }
+
+       
         const loadTodos = () => {
             const stored = localStorage.getItem("tasks");
             todos.length = 0; // clear current array
@@ -46,12 +53,18 @@ const Manager = ( () =>{
                 JSON.parse(stored).forEach(todo => todos.push(todo));
             }
         }
-        const getProjects = () =>{
-            return projects
-
+        const saveProject = () =>{
+            localStorage.setItem("project",JSON.stringify(projects))
         }
-
-       
+        const loadProject = () => {
+            const stored = localStorage.getItem("project")
+            projects.length = 0;
+            if(stored){
+                JSON.parse(stored).forEach(project => projects.push(project))
+            }
+    
+        }
+        
         const deleteToDo = (id) => {
             const index = todos.findIndex(todo => todo.id === id);
             if (index !== -1) {
@@ -64,13 +77,14 @@ const Manager = ( () =>{
             if (index !== -1) {
                 projects.splice(index, 1);
             }
+            saveProject();
             
         }
         
         
    
         
-        return{createToDo,createProject,deleteToDo,deleteProject,saveTodo,getTodos,loadTodos,getProjects}
+        return{createToDo,createProject,deleteToDo,deleteProject,saveTodo,getTodos,loadTodos,getProjects,saveProject,loadProject}
     
 })();
 
